@@ -6,6 +6,8 @@ argument-hint: "<text, file path, or URL> [content type]"
 
 # Expert Panel — Iterative Multi-Expert Scoring
 
+> **Reusable scoring engine.** Other mktg skills (copy-optimize, cro-audit, pr) reference this for rigorous multi-expert scoring instead of maintaining parallel rubrics. The pre-built panels below (PR, Landing Page, Social, Strategy) are the shared scoring mechanic those skills call into.
+
 Takes any content and scores it through a panel of simulated domain experts. Loops until the score hits 90+ or 3 rounds are exhausted. The humanizer expert is always included at 1.5x weight.
 
 ## Input
@@ -32,7 +34,7 @@ State these in 4 lines max before proceeding.
 
 Select 7-10 experts based on content type and domain. Always include:
 
-1. **Humanizer** (mandatory, weight 1.5x) -- Detects AI writing patterns. Scores how human the text sounds. Uses the 24-pattern detection framework from writing:unslop.
+1. **Humanizer** (mandatory, weight 1.5x) -- Detects AI writing patterns. Scores how human the text sounds. Uses the 24-pattern detection framework from writing-unslop.
 2. **Brand Voice Match** (mandatory) -- Does this sound like the brand/person, or like generic AI output?
 
 Then add 5-8 domain experts from the pre-built panels below.
@@ -192,13 +194,13 @@ For each round, produce:
 
 ## Step 6: Feedback-to-Source
 
-When scoring content produced by another skill (e.g., mktg:copy-optimize output, writing:xpost draft):
+When scoring content produced by another skill (e.g., mktg-copy-optimize output, writing-xpost draft):
 - Generate a 3-5 line improvement brief that the source skill can use
 - Format: "To improve: [specific change]. Because: [expert rationale]."
 
 ## Memory: Learned Patterns
 
-After each scoring session, if the user approves or rejects the final output, note the pattern in `~/.claude/skills/mktg:expert-panel/patterns.md`
+After each scoring session, if the user approves or rejects the final output, note the pattern in `~/.claude/skills/mktg-expert-panel/patterns.md`
 
 Format:
 ```

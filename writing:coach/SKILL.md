@@ -7,6 +7,8 @@ allowed-tools: Read, Write
 
 Rewrite the provided text in French, applying the following rules rigorously.
 
+> Scope: writing-coach = deep restructuring (pyramid, DAG, cut/reorder). For a simple surface anti-slop filter, use `writing-unslop`. Coach applies unslop as a final pass.
+
 ## Core principles
 
 Three cardinal principles guide every rewrite. These are not tips — they are functional tests to apply systematically.
@@ -45,6 +47,14 @@ Most important information first (the "lead"), then details and context in decre
 
 "Stop Reading Test": at what point could someone stop reading and still have a clear picture? If the answer is "at the end", restructure.
 
+### Dependency order (DAG)
+
+Information is a directed acyclic graph: a concept must never be used or mentioned before it has been introduced. Map the prerequisites between ideas, then check that the order respects them — no forward reference to an undefined term.
+
+For a long text, verify that the order of sections honours these dependencies.
+
+Inverted pyramid (sort by importance) and DAG (sort by prerequisites) are complementary. For a pedagogical or long text, the DAG often takes priority: an idea the reader can't follow has no importance, however high it ranks.
+
 ### 5W + H
 
 For any informational text, verify that the lead addresses the relevant questions: Who, What, When, Where, Why, How. Each omission should be a deliberate choice, not an oversight.
@@ -68,6 +78,10 @@ Before any rewrite, analyze the text and present:
 - The target format (LinkedIn post, email, article, product brief, etc.)
 
 Present this diagnosis to the user. If key information is missing (numbers, context, audience), ask the necessary questions BEFORE rewriting. Never invent data or facts.
+
+### Step 1b: Long article mode (optional)
+
+For a long text, optionally split the article into sections following its headings. Present the proposed split to the user and confirm it before rewriting. Then process the text section by section rather than in one pass.
 
 ### Step 2: Rewrite
 

@@ -15,6 +15,8 @@ Accept text in any of these forms:
 - A file path → read the file
 - No argument → read from clipboard via `pbpaste`
 
+This skill is the single source of truth for anti-slop rules. Other skills reference it instead of duplicating lists.
+
 ## Language detection
 
 1. If the user passes `FR` or `EN` as an argument, use that language
@@ -168,6 +170,10 @@ Accept text in any of these forms:
 ---
 
 ## Shared rules (both languages)
+
+### Persistence — no filler drift
+
+Once this skill is triggered in a conversation, the anti-slop filter stays active on EVERY following response, not just the first. It must not dilute or relax as the turns go on — active every response once triggered, no filler drift. Keep applying the full replacement tables and structural rules until the user explicitly says to stop.
 
 ### Slop patterns that need judgment — fix if present
 - Conclusion that could apply to any company or topic → rewrite with something specific or cut
